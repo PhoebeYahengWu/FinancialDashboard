@@ -1,0 +1,24 @@
+.collection a:hover {
+    text-decoration: none;
+}
+
+.collection a.collection-item {
+    color: #545454 !important; 
+}
+
+.collection {
+    border: none;
+}
+
+.modal {
+    height: 350px !important;
+}
+
+#submit:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#appTitle {
+    font-weight: 600;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Stock Performance Comparison</title> 
+</head>
+<body>
+
+  <div class="container-fluid">
+ 
+    <div class="row pb-0 mb-0 mt-3">
+        <div class="col-md-12 pb-0 mb-0"> 
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title text-center" id="appTitle">Stock Performance Comparison Charts</span> 
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row pb-0 mb-0 mt-0"> 
+    <div class="col-md-4">
+      <div class="card">  
+        <div class="card-content">
+          <span class="card-title text-center">Select Date Range</span>
+        </div>
+        <div class="card-action pb-0 pt-0"> 
+          <div class="row">
+          <div class="input-field col-md-6">
+            <i class="material-icons prefix">date_range</i>
+            <input type="text" class="datepicker" id="startDate" placeholder="Start Date" autocomplete="off"> 
+          </div>
+          <div class="input-field col-md-6"> 
+            <i class="material-icons prefix">date_range</i>
+            <input type="text" class="datepicker" id="endDate" placeholder="End Date" autocomplete="off">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title text-center">Enter Up to 5 Stock Tickers</span>  
+        </div>
+        <div class="card-action">
+          <div class="row">
+            <div class="col-md-2">
+              <input id="search_1" type="search" required autocomplete="off" placeholder="Ticker 1"> 
+            </div>
+            <div class="col-md-2">
+              <input id="search_2" type="search" required autocomplete="off" placeholder="Ticker 2"> 
+            </div>
+            <div class="col-md-2">
+              <input id="search_3" type="search" required autocomplete="off" placeholder="Ticker 3">
+            </div>
+            <div class="col-md-2">
+              <input id="search_4" type="search" required autocomplete="off" placeholder="Ticker 4">
+            </div>
+            <div class="col-md-2">
+              <input id="search_5" type="search" required autocomplete="off" placeholder="Ticker 5"> 
+            </div>
+            <div class="col-md-2"> 
+              <button class="btn waves-effect waves-light #26a69a teal lighten-1 text-white" type="submit" id="submit">Apply
+                <i class="material-icons right">send</i>
+              </button> 
+            </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<div class="row">
+      <div class="col-md-12">  
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title text-center">DashBoard</span>
+        </div>
+        <div class="card-action" style="height: 300px">
+          <canvas id="myChart1"></canvas>
+        </div>
+        <div class="card-action" style="height: 300px">
+            <canvas id="myChart2"></canvas>
+          </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+
+<script>
+    const Calender = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(Calender, {
+        format: 'yyyy-mm-dd',
+        showClearBtn: true 
+    });
+
+      
+</script>
+
+
+
+</body>
+</html>
