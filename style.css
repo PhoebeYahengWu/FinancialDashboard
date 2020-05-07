@@ -11,7 +11,7 @@
 }
 
 .modal {
-    height: 350px !important;
+    height: 390px !important;
 }
 
 #submit:focus {
@@ -25,6 +25,6 @@
 
 @media only screen and (max-width: 768px) {
     .modal {
-        height: 426px !important;
+        height: 460px !important;
     }
   }
