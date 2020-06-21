@@ -25,6 +25,6 @@
 
 @media only screen and (max-width: 768px) {
     .modal {
-        height: 460px !important;
+        height: 350px !important;
     }
   }
